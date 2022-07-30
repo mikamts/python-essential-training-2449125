@@ -50,6 +50,28 @@ class TerminalScribe:
         if not self.canvas.hitsWall(pos):
             self.draw(pos)
 
+    def drawSquare(self, size):
+        i = 0
+
+        while i<size:
+            self.right()
+            i += 1
+
+        i = 0
+        while i<size:
+            self.down()
+            i += 1
+
+        i = 0
+        while i<size:
+            self.left()
+            i += 1
+
+        i = 0
+        while i<size:
+            self.up()
+            i += 1
+            
     def draw(self, pos):
         self.canvas.setPos(self.pos, self.trail)
         self.pos = pos
@@ -60,17 +82,6 @@ class TerminalScribe:
 canvas = Canvas(30, 30)
 scribe = TerminalScribe(canvas)
 
-scribe.right()
-scribe.right()
-scribe.right()
-scribe.down()
-scribe.down()
-scribe.down()
-scribe.left()
-scribe.left()
-scribe.left()
-scribe.up()
-scribe.up()
-scribe.up()
+scribe.drawSquare(10)
 
 
